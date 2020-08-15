@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,17 +10,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapplication.Admin.AdminLoginActivity;
-import com.example.myapplication.Admin.AdminRegActivity;
+import com.example.myapplication.LoginActivity;
+import com.example.myapplication.MainActivity;
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
+public class AdminLoginActivity extends AppCompatActivity {
     private Button mRegBtn, mLoginBtn;
-    private EditText emailImput, passInput;
+    private EditText emailInput, passInput;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuth;
@@ -28,12 +29,12 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_admin_login);
 
         mRegBtn = findViewById(R.id.reg_btn);
         mLoginBtn = findViewById(R.id.login_btn);
 
-        emailImput = findViewById(R.id.email_txt);
+        emailInput = findViewById(R.id.email_txt);
         passInput = findViewById(R.id.password_txt);
 
         mAuth = FirebaseAuth.getInstance();
@@ -45,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user !=null){
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MainAdminActivity.class));
                     finish();
                     return;
                 }
@@ -54,21 +55,20 @@ public class LoginActivity extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String email = emailImput.getText().toString();
+                final String email = emailInput.getText().toString();
                 final String password = passInput.getText().toString();
 
                 if (email.isEmpty() && password.isEmpty()){
-                    Toast.makeText(LoginActivity.this,"email or pass empty",
+                    Toast.makeText(AdminLoginActivity.this,"email or pass empty",
                             Toast.LENGTH_LONG).show();
                 }else{
                     mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                startActivity(new Intent(getApplicationContext(), MainAdminActivity.class));
                             }else{
-                                Toast.makeText(LoginActivity.this,"error loging in",
-                                        Toast.LENGTH_LONG).show();
+                                Toast.makeText(AdminLoginActivity.this,"error loging in",Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -77,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -89,15 +90,8 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.removeAuthStateListener(firebaseAuth);
     }
 
+
     public void reg(View view) {
-        startActivity(new Intent(getApplicationContext(), RegistrationActivity.class));
-    }
-
-    public void adminReg(View view) {
         startActivity(new Intent(getApplicationContext(), AdminRegActivity.class));
-    }
-
-    public void adminLogin(View view) {
-        startActivity(new Intent(getApplicationContext(), AdminLoginActivity.class));
     }
 }

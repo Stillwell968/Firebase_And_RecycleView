@@ -71,4 +71,30 @@
         app:layout_constraintVertical_bias="0.01999998"
         android:onClick="reg"/>
 
+    <Button
+        android:id="@+id/adminReg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        android:text="Register as Admin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_btn"
+        app:layout_constraintVertical_bias="0.131"
+        android:onClick="adminReg"/>
+
+    <Button
+        android:id="@+id/adminLogin_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="log in as admin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintVertical_bias="0.489"
+        android:onClick="adminLogin"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

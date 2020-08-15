@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationActivity">
+    tools:context=".Admin.AdminRegActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="103dp"
         android:layout_height="40dp"
-        android:text="Register"
+        android:text="Admin Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
@@ -84,33 +84,5 @@
         app:layout_constraintStart_toEndOf="@+id/login_btn"
         app:layout_constraintTop_toBottomOf="@+id/password_txt"
         app:layout_constraintVertical_bias="0.01999998" />
-
-    <Button
-        android:id="@+id/adminReg_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="81dp"
-        android:text="Register as Admin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_btn"
-        app:layout_constraintVertical_bias="0.131"
-        android:onClick="adminReg"/>
-
-    <Button
-        android:id="@+id/adminLogin_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="log in as admin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
-        app:layout_constraintVertical_bias="0.489"
-        android:onClick="adminLogin"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

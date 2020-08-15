@@ -22,6 +22,7 @@ public class CreateCarActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference userDb;
+    private DatabaseReference adminDb;
 
     private String make, model, regNum, userId;
 
@@ -58,6 +59,7 @@ public class CreateCarActivity extends AppCompatActivity {
         regNum = regEdit.getText().toString();
 
         userDb = FirebaseDatabase.getInstance().getReference().child("Cars").child(userId).child(regNum);
+        adminDb = FirebaseDatabase.getInstance().getReference().child("Car List").child(regNum);
 
         Map userInfo = new HashMap<>();
 
@@ -66,5 +68,6 @@ public class CreateCarActivity extends AppCompatActivity {
         userInfo.put("Registration Mumber", regNum);
 
         userDb.updateChildren(userInfo);
+        adminDb.updateChildren(userInfo);
     }
 }

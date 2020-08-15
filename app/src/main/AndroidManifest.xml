@@ -11,15 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Cars.MyCarsActivity"></activity>
-        <activity android:name=".CreateCarActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Admin.AdminRegActivity"></activity>
+        <activity android:name=".Admin.AdminLoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Admin.MainAdminActivity" />
+        <activity android:name=".Cars.MyCarsActivity" />
+        <activity android:name=".CreateCarActivity" />
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".MainActivity" />
     </application>
