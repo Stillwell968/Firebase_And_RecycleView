@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/carMake_txt"
+        android:layout_width="99dp"
+        android:layout_height="38dp"
+        android:text="Car Make"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326" />
+
+    <TextView
+        android:id="@+id/carModel_txt"
+        android:layout_width="121dp"
+        android:layout_height="50dp"
+        android:text="Car Model"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carMake_txt"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <TextView
+        android:id="@+id/carReg_num"
+        android:layout_width="112dp"
+        android:layout_height="38dp"
+        android:text="Registrtation Number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carModel_txt"
+        app:layout_constraintVertical_bias="0.079" />
+</androidx.constraintlayout.widget.ConstraintLayout>
